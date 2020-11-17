@@ -1,7 +1,8 @@
-# install.packages("palmerpenguins")
+#install.packages("palmerpenguins")
 library(palmerpenguins)
 library(ggplot2)
 
+# Creates a scatterplot of the specified variables from the penguins dataset.
 penguin_scatter <- function(x_var, y_var){
 
   ggplot(data = penguins, aes(x = .data[[x_var]],
@@ -11,6 +12,7 @@ penguin_scatter <- function(x_var, y_var){
                alpha = 0.9)
 }  
 
+# Creates a boxplot of a specified variable from the penguins dataset.
 penguin_boxplot <- function(y_var){
   
   ggplot(data = penguins, 
@@ -19,4 +21,3 @@ penguin_boxplot <- function(y_var){
   geom_boxplot(aes(fill = species), width = 0.5, show.legend = FALSE) +
   labs(x = "Species", y = y_var)
 }
-
